@@ -21,7 +21,7 @@
 
 .inner {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1.1fr 1fr;
   align-items: center;
   gap: var(--space-12);
 }
@@ -38,8 +38,12 @@
 }
 
 .title {
-  font-size: var(--text-display);
+  font-size: clamp(2.25rem, 3.5vw, 3.5rem);
   line-height: 1.15;
+}
+/* Each headline line wraps (and balances) on its own, so a long line never strands one word. */
+.line {
+  display: block;
   text-wrap: balance;
 }
 .title em {

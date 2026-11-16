@@ -20,9 +20,8 @@ export function Hero() {
         <div className={styles.copy}>
           <p className={`${styles.eyebrow} reveal`}>{hero.eyebrow}</p>
           <h1 id="hero-title" className={`${styles.title} reveal`} style={revealDelay(80)}>
-            {hero.titleLine1}
-            <br />
-            <em>{hero.titleLine2}</em>
+            <span className={styles.line}>{hero.titleLine1}</span>
+            <em className={styles.line}>{hero.titleLine2}</em>
           </h1>
           <p className={`${styles.body} reveal`} style={revealDelay(160)}>
             {hero.body}

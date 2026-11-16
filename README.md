@@ -5,6 +5,40 @@ wall, live-stream chat, sermon audio, events calendar with registration, and
 online giving hand-off. Front end is Vite + React 19 + React Router; the
 optional API is Express 5. Validation is shared between both with Zod.
 
+## Screenshots
+
+![Home page](docs/screenshots/home.jpg)
+
+<p align="center">
+  <img src="docs/screenshots/watch.jpg" width="49%" alt="Watch Live: stream, live chat and service tools" />
+  <img src="docs/screenshots/sermon.jpg" width="49%" alt="Sermon detail: audio player and personal notes" />
+</p>
+<p align="center">
+  <img src="docs/screenshots/calendar.jpg" width="49%" alt="Events calendar with weekly services and agenda" />
+  <img src="docs/screenshots/event-registration.jpg" width="49%" alt="Event page with registration form validation" />
+</p>
+<p align="center">
+  <img src="docs/screenshots/give.jpg" width="49%" alt="Giving: amount and fund picker" />
+  <img src="docs/screenshots/menu.jpg" width="49%" alt="Slide-in navigation drawer with submenus" />
+</p>
+
+![Responsive on mobile](docs/screenshots/mobile.jpg)
+
+<details>
+<summary><strong>Full-page screenshots</strong></summary>
+
+| Home | About | Plan a Visit |
+| --- | --- | --- |
+| ![Home](docs/screenshots/home-full.jpg) | ![About](docs/screenshots/about.jpg) | ![Plan a Visit](docs/screenshots/visit.jpg) |
+
+| Events | Prayer wall |
+| --- | --- |
+| ![Events](docs/screenshots/events.jpg) | ![Prayer wall](docs/screenshots/prayer.jpg) |
+
+</details>
+
+> Photos in the screenshots are generated placeholders. Swap in real images via `src/content/media.ts`.
+
 ## Quick start
 
 ```bash

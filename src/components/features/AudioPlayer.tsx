@@ -59,6 +59,8 @@ export function AudioPlayer({ src, title, storageKey }: AudioPlayerProps) {
     audio.addEventListener("play", onPlay);
     audio.addEventListener("pause", onPause);
     audio.addEventListener("error", onError);
+    // Metadata may already be loaded (cached file) before this effect ran; that event won't fire again.
+    if (audio.readyState >= HTMLMediaElement.HAVE_METADATA) onLoaded();
     return () => {
       audio.removeEventListener("loadedmetadata", onLoaded);
       audio.removeEventListener("timeupdate", onTime);

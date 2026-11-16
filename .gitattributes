@@ -1,0 +1,9 @@
+# Normalise line endings in the repo; checkout uses the OS default.
+* text=auto eol=lf
+
+# Binary files: never touch line endings
+*.pdf binary
+*.mp3 binary
+*.png binary
+*.jpg binary
+*.ico binary

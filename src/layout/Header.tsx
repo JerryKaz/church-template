@@ -113,15 +113,17 @@ export function Header() {
                   )}
                 </div>
                 {children && (
-                  <ul className={`${styles.submenu} ${isExpanded ? styles.submenuOpen : ""}`}>
-                    {children.map((child) => (
-                      <li key={child.label}>
-                        <NavLink to={child.to} className={({ isActive }) => (isActive ? styles.subActive : "")} onClick={close}>
-                          {child.label}
-                        </NavLink>
-                      </li>
-                    ))}
-                  </ul>
+                  <div className={`${styles.submenu} ${isExpanded ? styles.submenuOpen : ""}`} inert={!isExpanded}>
+                    <ul className={styles.submenuList}>
+                      {children.map((child) => (
+                        <li key={child.label}>
+                          <NavLink to={child.to} className={({ isActive }) => (isActive ? styles.subActive : "")} onClick={close}>
+                            {child.label}
+                          </NavLink>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
                 )}
               </li>
             );
