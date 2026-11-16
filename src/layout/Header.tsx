@@ -3,6 +3,7 @@ import { Link, NavLink, useLocation } from "react-router";
 import { ChevronDown, X } from "lucide-react";
 import { site } from "../content/site";
 import { SocialIcon } from "../components/SocialIcon";
+import { DesktopNav } from "./DesktopNav";
 import { Logo } from "./Logo";
 import styles from "./Header.module.css";
 
@@ -19,6 +20,14 @@ export function Header() {
     setLastPath(pathname);
     setOpen(false);
   }
+
+  // The drawer is for small screens: close it if the window grows to desktop width.
+  useEffect(() => {
+    const mq = window.matchMedia("(min-width: 1100px)");
+    const onChange = (e: MediaQueryListEvent) => e.matches && setOpen(false);
+    mq.addEventListener("change", onChange);
+    return () => mq.removeEventListener("change", onChange);
+  }, []);
 
   // Lock scroll, close on Escape, and manage focus while the drawer is open.
   useEffect(() => {
@@ -46,6 +55,8 @@ export function Header() {
         <Link to="/" className={styles.logoLink} aria-label={`${site.name} home`}>
           <Logo />
         </Link>
+
+        <DesktopNav />
 
         <div className={styles.actions}>
           <ul className={styles.socials}>
@@ -82,7 +93,7 @@ export function Header() {
       <nav
         id="site-drawer"
         className={`${styles.drawer} ${open ? styles.drawerOpen : ""}`}
-        aria-label="Main"
+        aria-label="Mobile"
         aria-hidden={!open}
         inert={!open}
       >

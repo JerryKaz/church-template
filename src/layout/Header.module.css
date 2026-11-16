@@ -9,11 +9,14 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: var(--space-6);
   height: var(--header-h);
   padding-inline: var(--gutter);
+  border-bottom: 1px solid transparent;
 }
 
 .logoLink {
+  flex-shrink: 0;
   text-decoration: none;
 }
 
@@ -23,8 +26,9 @@
   gap: var(--space-6);
 }
 
+/* Social icons only where there's room beside the full nav (they're also in the footer and drawer). */
 .socials {
-  display: flex;
+  display: none;
   gap: var(--space-2);
   margin: 0;
   padding: 0;
@@ -190,6 +194,11 @@
   padding: 0 0 0 var(--space-4);
   overflow: hidden;
   list-style: none;
+  visibility: hidden;
+  transition: visibility 300ms;
+}
+.submenuOpen .submenuList {
+  visibility: visible;
 }
 .submenuOpen .submenuList {
   padding-bottom: var(--space-4);
@@ -214,8 +223,20 @@
   color: var(--color-primary);
 }
 
-@media (max-width: 900px) {
+@media (min-width: 1360px) {
   .socials {
+    display: flex;
+  }
+}
+
+/* Desktop: inline nav replaces the hamburger. */
+@media (min-width: 1100px) {
+  .bar {
+    border-bottom-color: var(--color-border);
+  }
+  .hamburger,
+  .drawer,
+  .scrim {
     display: none;
   }
 }

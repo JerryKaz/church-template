@@ -19,7 +19,7 @@ optional API is Express 5. Validation is shared between both with Zod.
 </p>
 <p align="center">
   <img src="docs/screenshots/give.jpg" width="49%" alt="Giving: amount and fund picker" />
-  <img src="docs/screenshots/menu.jpg" width="49%" alt="Slide-in navigation drawer with submenus" />
+  <img src="docs/screenshots/menu.jpg" width="49%" alt="Desktop navigation bar with dropdown menus" />
 </p>
 
 ![Responsive on mobile](docs/screenshots/mobile.jpg)

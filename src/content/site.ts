@@ -9,6 +9,8 @@ export interface NavItem {
   label: string;
   to: string;
   children?: { label: string; to: string }[];
+  /** Set false to keep an item out of the desktop bar (it still shows in the mobile drawer). */
+  desktop?: boolean;
 }
 
 export const site = {
@@ -17,7 +19,7 @@ export const site = {
   description: "A place to belong. Worship with us in person or online.",
 
   nav: [
-    { label: "Home", to: "/" },
+    { label: "Home", to: "/", desktop: false }, // the logo links home
     {
       label: "About",
       to: "/about",
@@ -48,7 +50,7 @@ export const site = {
     },
     { label: "Events", to: "/events" },
     { label: "Prayer", to: "/prayer" },
-    { label: "Give", to: "/give" },
+    { label: "Give", to: "/give", desktop: false }, // the Give button covers it
   ] satisfies NavItem[],
 
   socials: [

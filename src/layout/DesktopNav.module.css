@@ -1,0 +1,143 @@
+.nav {
+  display: none;
+}
+
+.list {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.item {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.link {
+  position: relative;
+  padding: var(--space-3) var(--space-3);
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--color-ink);
+  text-decoration: none;
+  white-space: nowrap;
+  border-radius: 8px;
+  transition: color 150ms ease;
+}
+.hasMenu .link {
+  padding-right: var(--space-1);
+}
+.link:hover {
+  color: var(--color-primary);
+}
+
+/* Underline marks the current section */
+.link::after {
+  content: "";
+  position: absolute;
+  left: var(--space-3);
+  right: var(--space-3);
+  bottom: 4px;
+  height: 2px;
+  background: var(--color-primary);
+  border-radius: 2px;
+  transform: scaleX(0);
+  transition: transform 200ms var(--ease-out);
+}
+.hasMenu .link::after {
+  right: var(--space-1);
+}
+.active {
+  color: var(--color-primary);
+}
+.active::after {
+  transform: scaleX(1);
+}
+
+.toggle {
+  display: grid;
+  place-items: center;
+  width: 28px;
+  height: 36px;
+  padding: 0;
+  color: var(--color-ink);
+  background: none;
+  border: 0;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.toggle svg {
+  transition: transform 200ms var(--ease-out);
+}
+.toggle:hover {
+  color: var(--color-primary);
+}
+
+/* Dropdown: shown on hover, keyboard focus inside the item, or click (.open) */
+.dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 10;
+  min-width: 220px;
+  margin: 0;
+  padding: var(--space-2);
+  list-style: none;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-card);
+  box-shadow: 0 18px 40px rgba(33, 1, 47, 0.14);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(6px);
+  transition:
+    opacity 150ms ease,
+    transform 150ms ease,
+    visibility 150ms;
+}
+/* Invisible bridge so the menu doesn't close while the pointer crosses the gap */
+.dropdown::before {
+  content: "";
+  position: absolute;
+  inset: -10px 0 auto;
+  height: 10px;
+}
+
+.hasMenu:hover .dropdown,
+.hasMenu:focus-within .dropdown,
+.open .dropdown {
+  opacity: 1;
+  visibility: visible;
+  transform: none;
+}
+.hasMenu:hover .toggle svg,
+.open .toggle svg {
+  transform: rotate(180deg);
+}
+
+.dropLink {
+  display: block;
+  padding: var(--space-2) var(--space-3);
+  font-size: 0.95rem;
+  color: var(--color-ink);
+  text-decoration: none;
+  border-radius: 8px;
+}
+.dropLink:hover {
+  color: var(--color-primary);
+  background: var(--color-primary-soft);
+}
+.dropActive {
+  font-weight: 600;
+  color: var(--color-primary);
+}
+
+@media (min-width: 1100px) {
+  .nav {
+    display: block;
+  }
+}
