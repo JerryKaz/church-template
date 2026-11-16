@@ -1,0 +1,80 @@
+.hero {
+  position: relative;
+  display: flex;
+  align-items: center;
+  min-height: calc(100svh - var(--header-h));
+  max-height: 900px;
+  padding-block: var(--space-20);
+  color: #fff;
+  background-color: var(--color-dark);
+  background-size: cover;
+  background-position: center;
+  isolation: isolate;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: var(--overlay-hero);
+}
+
+.inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: var(--space-12);
+}
+
+.copy {
+  text-align: center;
+}
+
+.eyebrow {
+  margin-bottom: var(--space-4);
+  font-size: var(--text-base);
+  letter-spacing: var(--tracking-eyebrow);
+  text-transform: uppercase;
+}
+
+.title {
+  font-size: var(--text-display);
+  line-height: 1.15;
+  text-wrap: balance;
+}
+.title em {
+  font-style: italic;
+}
+
+.body {
+  max-width: 34rem;
+  margin: var(--space-6) auto 0;
+  font-size: var(--text-lg);
+  white-space: pre-line;
+}
+
+.ctas {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-4);
+  margin-top: var(--space-8);
+}
+
+@media (max-width: 960px) {
+  .hero {
+    max-height: none;
+  }
+  .inner {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .body {
+    white-space: normal;
+  }
+}
+
+@media (max-width: 520px) {
+  .ctas > * {
+    flex: 1 1 100%;
+  }
+}

@@ -1,0 +1,115 @@
+.chat {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.messages {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  height: 280px;
+  margin: 0;
+  padding: var(--space-3);
+  overflow-y: auto;
+  list-style: none;
+  background: #fcfbfd;
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  overscroll-behavior: contain;
+}
+
+.empty {
+  margin: auto;
+  color: var(--color-ink-muted);
+  font-size: var(--text-sm);
+}
+
+.message {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 0 var(--space-2);
+  max-width: 90%;
+  padding: var(--space-2) var(--space-3);
+  background: #fff;
+  border: 1px solid var(--color-border);
+  border-radius: 10px 10px 10px 2px;
+}
+.mine {
+  align-self: flex-end;
+  color: #fff;
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+  border-radius: 10px 10px 2px 10px;
+}
+.author {
+  font-size: var(--text-xs);
+  font-weight: 700;
+}
+.time {
+  font-size: 0.7rem;
+  opacity: 0.7;
+}
+.text {
+  grid-column: 1 / -1;
+  font-size: var(--text-sm);
+  overflow-wrap: anywhere;
+}
+
+.composer {
+  display: flex;
+  gap: var(--space-2);
+}
+.input {
+  flex: 1;
+  min-width: 0;
+  min-height: 44px;
+  padding: 0 var(--space-3);
+  font: inherit;
+  border: 1.5px solid var(--color-border);
+  border-radius: 8px;
+}
+.input:focus {
+  outline: none;
+  border-color: var(--color-primary);
+}
+.send,
+.join {
+  display: grid;
+  place-items: center;
+  min-width: 44px;
+  padding: 0 var(--space-4);
+  font-weight: 700;
+  color: #fff;
+  background: var(--color-primary);
+  border: 0;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.send:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.footer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: var(--space-2);
+  font-size: var(--text-xs);
+  color: var(--color-ink-muted);
+}
+.link {
+  padding: 0;
+  font: inherit;
+  color: var(--color-primary);
+  text-decoration: underline;
+  background: none;
+  border: 0;
+  cursor: pointer;
+}
+
+.error {
+  font-size: var(--text-sm);
+  color: #a3222a;
+}

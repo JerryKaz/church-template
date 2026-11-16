@@ -1,0 +1,128 @@
+.player {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: var(--space-6);
+  padding: var(--space-6);
+  color: #fff;
+  background: linear-gradient(135deg, var(--color-dark), var(--color-primary));
+  border-radius: var(--radius-card);
+  box-shadow: 0 20px 50px rgba(33, 1, 47, 0.25);
+}
+
+.controls,
+.extras {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.play {
+  display: grid;
+  place-items: center;
+  width: 60px;
+  height: 60px;
+  color: var(--color-dark);
+  background: #fff;
+  border: 0;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: transform 150ms ease;
+}
+.play:hover:not(:disabled) {
+  transform: scale(1.06);
+}
+.play:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.iconBtn {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  color: #fff;
+  background: none;
+  border: 0;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 150ms ease;
+}
+.iconBtn:hover {
+  background: rgba(255, 255, 255, 0.12);
+}
+.skipLabel {
+  position: absolute;
+  font-size: 9px;
+  font-weight: 700;
+}
+
+.timeline {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  min-width: 0;
+}
+.time {
+  min-width: 3.2em;
+  font-size: var(--text-sm);
+  font-variant-numeric: tabular-nums;
+  text-align: center;
+}
+
+.range {
+  --progress: 0%;
+  flex: 1;
+  min-width: 0;
+  height: 6px;
+  appearance: none;
+  background: linear-gradient(to right, #fff var(--progress), rgba(255, 255, 255, 0.25) var(--progress));
+  border-radius: 999px;
+  cursor: pointer;
+}
+.range::-webkit-slider-thumb {
+  width: 16px;
+  height: 16px;
+  appearance: none;
+  background: #fff;
+  border-radius: 50%;
+  box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.25);
+}
+.range::-moz-range-thumb {
+  width: 16px;
+  height: 16px;
+  background: #fff;
+  border: 0;
+  border-radius: 50%;
+}
+
+.pill {
+  min-width: 52px;
+  padding: var(--space-2) var(--space-3);
+  font-size: var(--text-sm);
+  font-weight: 700;
+  color: #fff;
+  background: rgba(255, 255, 255, 0.15);
+  border: 0;
+  border-radius: 999px;
+  cursor: pointer;
+}
+
+.error {
+  grid-column: 1 / -1;
+  font-size: var(--text-sm);
+  color: #ffd2d6;
+}
+
+@media (max-width: 720px) {
+  .player {
+    grid-template-columns: minmax(0, 1fr);
+    justify-items: center;
+    gap: var(--space-4);
+  }
+  .timeline {
+    width: 100%;
+  }
+}

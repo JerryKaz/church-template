@@ -1,0 +1,41 @@
+{
+  "name": "church-template",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "dev:api": "tsx watch server/index.ts",
+    "dev:all": "concurrently -k -n web,api -c magenta,cyan \"vite\" \"tsx watch server/index.ts\"",
+    "build": "tsc -b && vite build",
+    "start": "NODE_ENV=production tsx server/index.ts",
+    "lint": "oxlint",
+    "typecheck": "tsc -b",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "cors": "^2.8.6",
+    "express": "^5.3.0",
+    "lucide-react": "^1.73.0",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
+    "react-router": "^8.5.1",
+    "zod": "^4.6.7",
+    "tsx": "^4.23.15"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.19",
+    "@types/express": "^5.0.6",
+    "@types/node": "^24.19.2",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "@vitejs/plugin-react": "^6.1.2",
+    "concurrently": "^10.0.7",
+    "oxlint": "^1.90.0",
+    "typescript": "~7.0.2",
+    "vite": "^8.3.6"
+  },
+  "engines": {
+    "node": ">=20.11"
+  }
+}

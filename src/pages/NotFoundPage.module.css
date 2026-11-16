@@ -1,0 +1,26 @@
+.page {
+  padding-block: clamp(4rem, 12vw, 9rem);
+  text-align: center;
+}
+.code {
+  font-family: var(--font-heading);
+  font-size: clamp(4rem, 14vw, 9rem);
+  font-weight: 700;
+  line-height: 1;
+  color: var(--color-primary-soft-hover);
+}
+.title {
+  margin-top: var(--space-4);
+  font-size: var(--text-h2);
+}
+.body {
+  margin-top: var(--space-3);
+  color: var(--color-ink-muted);
+}
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-4);
+  margin-top: var(--space-8);
+}

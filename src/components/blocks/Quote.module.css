@@ -1,0 +1,29 @@
+.band {
+  padding-block: clamp(3rem, 6vw, 5rem);
+  color: #fff;
+  background:
+    radial-gradient(circle at 15% 20%, rgba(255, 255, 255, 0.12), transparent 40%),
+    linear-gradient(120deg, var(--color-primary), var(--color-dark));
+}
+
+.figure {
+  margin: 0 auto;
+  max-width: 980px;
+  text-align: center;
+}
+
+.quote {
+  margin: 0;
+  font-family: var(--font-heading);
+  font-size: clamp(1.5rem, 3vw, 2.25rem);
+  font-style: italic;
+  line-height: 1.35;
+}
+
+.cite {
+  margin-top: var(--space-4);
+  font-size: var(--text-sm);
+  letter-spacing: var(--tracking-eyebrow);
+  text-transform: uppercase;
+  opacity: 0.8;
+}

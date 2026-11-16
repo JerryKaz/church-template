@@ -1,0 +1,60 @@
+/*
+ * Design tokens — re-skin the whole template from here.
+ */
+:root {
+  /* Brand */
+  --color-primary: #6d039e;
+  --color-primary-hover: #58027f;
+  --color-primary-soft: #f0e6f5;
+  --color-primary-soft-hover: #e4d2ee;
+
+  /* Neutrals */
+  --color-ink: #0b0010;
+  --color-ink-muted: #4a3d52;
+  --color-dark: #21012f;
+  --color-surface: #ffffff;
+  --color-border: rgba(11, 0, 16, 0.12);
+  --color-on-dark: #ffffff;
+  --color-on-dark-muted: rgba(255, 255, 255, 0.72);
+
+  /* Overlays */
+  --overlay-hero: rgba(0, 0, 0, 0.5);
+  --overlay-brand: rgba(109, 3, 158, 0.7);
+
+  /* Typography */
+  --font-heading: "Playfair Display", Georgia, serif;
+  --font-body: "Source Sans 3", system-ui, -apple-system, "Segoe UI", sans-serif;
+
+  --text-xs: 0.85rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-h3: 1.5rem;
+  --text-h2: clamp(2rem, 3.2vw, 2.5rem);
+  --text-display: clamp(2.25rem, 3.9vw, 3.5rem);
+
+  --tracking-eyebrow: 0.3em;
+  --tracking-button: 0.04em;
+
+  /* Spacing & layout */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+  --space-20: 5rem;
+
+  --container: 1240px;
+  --gutter: clamp(1rem, 4vw, 2.5rem);
+  --header-h: 78px;
+
+  /* Shape & motion */
+  --radius-button: 10px;
+  --radius-card: 12px;
+  --shadow-drawer: -12px 0 40px rgba(11, 0, 16, 0.18);
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --duration: 600ms;
+}

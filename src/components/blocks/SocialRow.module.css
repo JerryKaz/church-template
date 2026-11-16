@@ -1,0 +1,28 @@
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-4);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-4) var(--space-6);
+  font-weight: 700;
+  color: var(--color-primary);
+  text-decoration: none;
+  background: #fff;
+  border: 1.5px solid var(--color-primary-soft-hover);
+  border-radius: var(--radius-button);
+  transition: all 150ms ease;
+}
+.link:hover {
+  color: #fff;
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+}

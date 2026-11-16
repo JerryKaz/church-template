@@ -1,0 +1,16 @@
+.updated {
+  margin-bottom: var(--space-8);
+  font-size: var(--text-sm);
+  color: var(--color-ink-muted);
+}
+
+.prose {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+  font-size: var(--text-lg);
+}
+.prose h2 {
+  margin-bottom: var(--space-3);
+  font-size: 1.5rem;
+}
